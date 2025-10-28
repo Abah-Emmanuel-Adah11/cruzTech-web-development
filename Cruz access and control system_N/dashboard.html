@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruz Technologies -  Dashboard</title>
+    <link rel="icon" href="images/Cruz_logo.jpg">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Included Moment.js for date/time handling -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-shield-alt"></i>
+                <h2>Cruz Technologies</h2>
+                <p>Access and Control System</p>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#"><i class="fas fa-home"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="visitor.html"><i class="fas fa-user-friends"></i> Visitors</a>
+                    </li>
+                    <!-- <li>
+                        <a href="#"><i class="fas fa-calendar-alt"></i> Appointments</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-clipboard-list"></i> Reports</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                    </li> -->
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <span class="username">Admin User</span>
+                        <span class="role">System Administrator</span>
+                    </div>
+                </div>
+                <button id="logoutBtn" class="logout-btn">
+                    <a href="login.html">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </button>
+            </div>
+        </aside>
+        
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Visitor Management</h1>
+                <div class="header-actions">
+                    <div class="datetime">
+                        <span id="currentDate"></span>
+                        <span id="currentTime"></span>
+                    </div>
+                    <button class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                </div>
+            </header>
+            
+            <div class="content-wrapper">
+                <!-- Visitor Registration Form -->
+                <section class="visitor-form-section">
+                    <h2><i class="fas fa-user-plus"></i> Register New Visitor</h2>
+                    
+                    <form id="visitorForm" class="visitor-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="visitorName"><i class="fas fa-user"></i> Full Name</label>
+                                <input type="text" id="visitorName" name="visitorName" required placeholder="Visitor's full name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="visitorNIN"><i class="fas fa-id-card"></i> National ID (NIN)</label>
+                                <input type="text" id="visitorNIN" name="visitorNIN" required placeholder="Visitor's National ID Number">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="host"><i class="fas fa-user-tie"></i> Person to Visit</label>
+                                <select id="host" name="host" required>
+                                    <option value="">Select host</option>
+                                    <option value="john.doe">John Doe (IT Department)</option>
+                                    <option value="jane.smith">Jane Smith (HR Department)</option>
+                                    <option value="michael.johnson">Michael Johnson (Finance)</option>
+                                    <option value="sarah.williams">Sarah Williams (Operations)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="purpose"><i class="fas fa-comment"></i> Purpose of Visit</label>
+                                <select id="purpose" name="purpose" required>
+                                    <option value="">Select purpose</option>
+                                    <option value="meeting">Meeting</option>
+                                    <option value="delivery">Delivery</option>
+                                    <option value="interview">Interview</option>
+                                    <option value="maintenance">Maintenance</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="checkInTime"><i class="fas fa-clock"></i> Check-in Time</label>
+                                <input type="text" id="checkInTime" name="checkInTime" readonly value="Automatically captured">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="visitorImage"><i class="fas fa-camera"></i> Visitor Image</label>
+                                <div class="image-upload">
+                                    <input type="file" id="visitorImage" name="visitorImage" accept="image/*" capture="user">
+                                    <label for="visitorImage" class="upload-btn">
+                                        <i class="fas fa-upload"></i> Capture/Upload
+                                    </label>
+                                    <span class="file-name">No image selected</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-save"></i> Register Visitor
+                            </button>
+                            <button type="button" class="clear-btn">
+                                <i class="fas fa-eraser"></i> Clear Form
+                            </button>
+                        </div>
+                    </form>
+                </section>
+                
+                <!-- Recent Visitors Section -->
+                <section class="recent-visitors">
+                    <h2><i class="fas fa-history"></i> Recent Visitors</h2>
+                    
+                    <div class="visitors-filter">
+                        <div class="filter-group">
+                            <label for="filterDate"><i class="fas fa-calendar-day"></i> Filter by Date:</label>
+                            <input type="date" id="filterDate" name="filterDate">
+                        </div>
+                        <div class="filter-group">
+                            <label for="filterHost"><i class="fas fa-filter"></i> Filter by Host:</label>
+                            <select id="filterHost" name="filterHost">
+                                <option value="">All Hosts</option>
+                                <option value="john.doe">John Doe</option>
+                                <option value="jane.smith">Jane Smith</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="visitors-table-container">
+                        <table class="visitors-table">
+                            <thead>
+                                <tr>
+                                    <th>Photo</th>
+                                    <th>Name</th>
+                                    <th>NIN</th>
+                                    <th>Host</th>
+                                    <th>Check-in</th>
+                                    <th>Check-out</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="visitorsTableBody">
+                                <!-- Visitor data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="table-actions">
+                        <button class="export-btn">
+                            <i class="fas fa-file-export"></i> Export to Excel
+                        </button>
+                        <div class="pagination">
+                            <button class="page-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                            <span class="page-info">Page 1 of 5</span>
+                            <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Check-out Modal -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Visitor Check-out</h2>
+            <div class="visitor-details">
+                <div class="visitor-photo">
+                    <img id="modalVisitorPhoto" src="" alt="Visitor Photo">
+                </div>
+                <div class="visitor-info">
+                    <p><strong>Name:</strong> <span id="modalVisitorName"></span></p>
+                    <p><strong>NIN:</strong> <span id="modalVisitorNIN"></span></p>
+                    <p><strong>Host:</strong> <span id="modalVisitorHost"></span></p>
+                    <p><strong>Check-in Time:</strong> <span id="modalCheckInTime"></span></p>
+                </div>
+            </div>
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label for="checkoutNotes">Check-out Notes (Optional)</label>
+                    <textarea id="checkoutNotes" placeholder="Any additional information..."></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button type="submit" class="confirm-btn">Confirm Check-out</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts/visitor.js"></script>
+</body>
+</html>

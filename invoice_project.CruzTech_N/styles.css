@@ -1,0 +1,217 @@
+ body{
+    background-color: white;
+    color: #000035;
+    margin: 0%;
+    opacity: 0.8;
+}
+
+
+/* Heading section */
+img{
+    border: 10px solid white;
+    width: 10rem;
+    border-radius: 10px;
+}
+
+.heading-list{
+    display:inline-block;
+    list-style: none;
+    float: right;
+}
+
+.heading-list input{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000035;
+    border-radius: 10px;
+}
+
+#heading{
+    background-color: #000035;
+    color:white;
+    padding: 2.5rem;
+}
+
+
+/* Stakeholders Section */
+#stakeholders{
+    padding: 4rem 2.5rem;
+}
+
+.reciever{
+    display: inline-block;
+    float: right;
+}
+.reciever p{
+    margin: 0;
+}
+.sender{
+    display: inline-block;
+}
+
+.custom-input{
+    background-color: #fff;
+    color: #000035;
+    border: 1px solid #000035;
+    padding: 10px 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-input:focus{
+    background-color: #fff;
+    color: #000035;
+    border: 1px solid #000035;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Product Section */
+#product-list{
+    padding-bottom: 100px;
+    padding-top: 50px;
+}
+
+.table-class{
+    margin: 0 auto;
+    border: none;
+    text-align: center;
+    border-collapse: collapse;
+    border: none;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.table-head{
+    background-color: #000035;
+    color: #fff;
+    padding: 2rem;
+}
+
+.table-class input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-class input:hover{
+    border-color: #000035;
+    border-width: 0.5px;
+    border-style: solid;
+
+}
+
+.last-column{
+    position: relative;
+}
+
+.last-row{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: grid;
+    width: 22%;
+    text-align: left;
+}
+
+.last-row td{
+    display: block;
+}
+
+
+/* Payment section */
+#payment{
+    background-color: #000035;
+    color: #fff;
+    display: inline-block;
+    margin-top: 14rem;
+    clip-path: polygon(0 0, 75% 0, 100% 100%, 0 100%);
+}
+
+#payment ul{
+    list-style: none;
+    padding-right: 60px;
+}
+
+#payment h3{
+    padding: 20px;
+}
+
+
+/* Terms section */
+#terms{
+    margin: 7rem 0 7rem 0;
+    text-align: center;
+}
+
+.signature{
+    display: inline-block;
+    float: right;
+    padding-right: 10%;
+}
+
+.btn-custom{
+    background-color: #000035;
+    color: #fff;
+    border: 0.1px solid #000035;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-custom:hover{
+    background-color: #fff;
+    color: #000035;
+    border: 0.1px solid #000035;
+}
+
+
+
+/* Aprreciation section */
+#appreciation{
+    padding: 3%
+}
+
+
+/* footer section */
+#footer{
+    padding-right: 1rem;
+
+}
+
+.clip1{
+    background-color: #000035;
+    color: #fff;
+    width: 60%;
+    padding-left: 2rem;
+    padding-top: 1rem;;
+    clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
+}
+
+.clip2{
+    width: 40%;
+    display: inline-block;
+    background-color: #000035;
+    clip-path: polygon(0 100px, 100% 100px, 100% 100%, 16% 100%);
+}
+
+#button{
+    margin: 7rem 0 7rem 0;
+    text-align: center;
+}
+
+hr{
+    margin: 0%;
+}
+
+/* Media Query */
+@media only screen and (max-width: 768px){
+    .break-after:after{
+        content: "\A";
+        white-space: pre;
+    }
+}

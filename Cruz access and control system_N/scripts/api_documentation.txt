@@ -1,0 +1,152 @@
+// API Documentation for Backend Developer
+// The frontend expects the following API endpoints to be implemented by the backend:
+
+// Authentication Endpoints
+// POST /api/auth/login
+
+// Request Body:
+
+json
+{
+  "username": "string",
+  "password": "string"
+}
+Response:
+
+json
+{
+  "success": boolean,
+  "token": "string", // JWT token for authenticated requests
+  "message": "string" // Optional, for error messages
+}
+POST /api/auth/recover
+
+Request Body:
+
+json
+{
+  "email": "string"
+}
+Response:
+
+json
+{
+  "success": boolean,
+  "message": "string"
+}
+Visitor Management Endpoints
+POST /api/visitors
+
+Request Body:
+
+json
+{
+  "name": "string",
+  "nin": "string",
+  "host": "string",
+  "purpose": "string",
+  "checkInTime": "ISO8601 datetime string",
+  "image": "base64 string or URL" // Optional
+}
+Response:
+
+json
+{
+  "success": boolean,
+  "visitor": {
+    "id": "string",
+    "name": "string",
+    "nin": "string",
+    "host": "string",
+    "purpose": "string",
+    "checkInTime": "ISO8601 datetime string",
+    "checkOutTime": "ISO8601 datetime string or null",
+    "status": "string",
+    "image": "string" // URL or base64
+  },
+  "message": "string" // Optional
+}
+
+// GET /api/visitors
+
+// Query Parameters:
+
+// date: "YYYY-MM-DD" (optional)
+
+// host: "string" (optional)
+
+// page: number (optional)
+
+// limit: number (optional)
+
+// Response:
+
+json
+{
+  "success": boolean,
+  "visitors": [
+    {
+      "id": "string",
+      "name": "string",
+      "nin": "string",
+      "host": "string",
+      "purpose": "string",
+      "checkInTime": "ISO8601 datetime string",
+      "checkOutTime": "ISO8601 datetime string or null",
+      "status": "string",
+      "image": "string"
+    }
+  ],
+  "total": number,
+  "message": "string" // Optional
+}
+POST /api/visitors/:id/checkout
+
+Request Body:
+
+json
+{
+  "notes": "string" // Optional
+}
+Response:
+
+json
+{
+  "success": boolean,
+  "checkOutTime": "ISO8601 datetime string",
+  "message": "string" // Optional
+}
+// Implementation Notes
+// Security Considerations:
+
+// All API calls (except login) should include an Authorization header with the JWT token
+
+// Password fields should be hashed before storage
+
+// Implement rate limiting on authentication endpoints
+
+// Data Validation:
+
+// Validate all input data on the server side
+
+// Sanitize inputs to prevent XSS and SQL injection
+
+// Session Management:
+
+// Implement token expiration and refresh tokens
+
+// Store tokens securely (HttpOnly, Secure cookies)
+
+// File Uploads:
+
+// For visitor images, consider using a storage service or saving to a secure directory
+
+// Validate image types and sizes
+
+// Pagination:
+
+// The visitors table is designed to support pagination
+
+// Implement server-side pagination for large datasets
+
+// This implementation provides a complete, functional frontend for the Cruz Technologies Access and Control System with clear documentation for the backend developer to implement the necessary APIs. The system includes all requested features and follows modern web development practices.

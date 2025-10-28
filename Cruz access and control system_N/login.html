@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruz Technologies - Login</title>
+    <link rel="icon" href="images/Cruz_logo.jpg">
+    <link rel="stylesheet" href="styles/login.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- System Logo -->
+         <img src="images/Cruz_logo.jpg" width="100">
+        <div class="logo">
+            <!-- <i class="fas fa-shield-alt"></i> -->
+            <!-- <h1>Cruz Technologies</h1> -->
+            <p>Access and Control System</p>
+        </div>
+        
+        <!-- Login Form -->
+        <form id="loginForm" class="login-form">
+            <div class="form-group">
+                <label for="username"><i class="fas fa-user"></i> Username</label>
+                <input type="text" id="username" name="username" required placeholder="Enter your username">
+            </div>
+            
+            <div class="form-group">
+                <label for="password"><i class="fas fa-lock"></i> Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+            </div>
+            
+            <div class="form-options">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <a href="#" class="forgot-password" id="forgotPassword">Forgot password?</a>
+            </div>
+            
+            <button type="submit" class="login-btn"><a href="dashboard.html"> Login </a> <i class="fas fa-sign-in-alt"></i></button>
+        </form>
+        
+        <!-- Password Recovery Modal (hidden by default) -->
+        <div id="recoveryModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Password Recovery</h2>
+                <p>Enter your email to receive a password reset link</p>
+                <form id="recoveryForm">
+                    <div class="form-group">
+                        <label for="recoveryEmail"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="recoveryEmail" required placeholder="Your registered email">
+                    </div>
+                    <button type="submit" class="recovery-btn">Send Reset Link</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/auth.js"></script>
+</body>
+</html>

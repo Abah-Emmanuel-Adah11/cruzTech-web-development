@@ -1,0 +1,126 @@
+body{
+    background-color: white;
+    color: #000035;
+    padding: 5rem;
+}
+
+/* All contents contianer ID */
+#invoice-container {
+    display: none;
+    background-color: white;
+    padding: 65px 90px;
+}
+
+
+/* Heading section */
+img{
+    border: 10px solid white;
+    width: 10rem;
+    border-radius: 10px;
+}
+
+.heading-list{
+    display:inline-block;
+    list-style: none;
+    float: right;
+}
+
+.heading-list input{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000035;
+    border-radius: 10px;
+}
+
+#heading{
+    background-color: #000035;
+    color:white;
+    padding: 2.5rem;
+}
+
+
+/* Stakeholders Section */
+#stakeholders{
+    padding: 5rem 1rem;
+}
+
+.reciever{
+    display: inline-block;
+    float: right;
+}
+.reciever p{
+    margin: 0;
+}
+.sender{
+    display: inline-block;
+    width: 150px;
+}
+
+/* Product Section */
+#product-list{
+    padding-bottom: 100px;
+    padding-top: 10px;
+    height: 550px; /* For footer position*/
+}
+
+.table-class{
+    text-align: center;
+    border-collapse: collapse;
+    border: none;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-head{
+    background-color: #000035;
+    color: #fff;
+    padding: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+.alignment{
+   padding: 2rem;
+   padding-bottom: 0.5rem; 
+}
+
+.last-row td{
+    display: block;
+}
+
+#terms{
+    padding: 4% 0 0 15%;
+}
+
+.thanks{
+    padding-top: 6%;
+}
+
+.under{
+    padding-top: 2rem;
+}
+
+/* Total Section */
+.total-due{
+    background-color: #000035;
+    color: #fff;
+}
+
+.total-due .total-text { /*added this with solo*/
+    padding: 2rem 1rem 0 1rem;
+}
+
+
+/* footer section */
+#footer{
+    background-color: #000035;
+    color: #fff;
+    padding: 2rem 0 0 0;
+    margin-top: 30%; /* Footer position */
+}
+
+#footer ul{
+    color: #fff;
+    list-style: none;
+    padding: 2% 1%;
+    /* display: flex;*/
+}

@@ -1,0 +1,1066 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins';
+}
+
+
+/* Global Tags */
+
+h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(35, 35, 85);
+}
+
+span{
+    font-size: .9rem;
+    color: #757373;
+}
+
+h6{
+    font-size: 1.1rem;
+    color: rgb(24, 24, 49);
+}
+
+
+/* Navigation Bar */
+nav{
+    /* To make the Nav-bar fixed at the top and maintain a 100% width*/
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: row; /* The flex direction should follow the row */
+    justify-content: space-between;
+    padding: 1vw 8vw;
+
+    /* for horizontal alignment to the centre within a specified container */
+    align-items: center;
+
+    /* adding a shadow like appearance to the navigation with 1st for x-axis, 2nd for y-axis & 3rd for the boader radius */
+    box-shadow: 2px 2px 10px rgb(0, 0, 0, 0.15);
+
+    /* It ensures that everything flows directly under the fixed-top NavBar irrective of their position property: value; */
+    z-index: 1; 
+}
+
+nav img{
+    width: 150px;
+
+    /* This makes the logo pointable when hovered by a cusor */
+    cursor: pointer;
+}
+
+nav .navigation{
+    display: flex; /* Added because of the Hamburger image */
+}
+
+/* Responsiveness */
+nav #menu-close{
+    display: none; /*Because you don't want it displayed of large screen*/
+}
+
+/* Responsiveness */
+nav #menu-btn{
+    width: 30px;
+    height: 30px;
+    display: none;
+}
+
+nav .navigation ul{
+    display: flex;
+    justify-content: flex-end; /* negligeable */
+    align-items: center; /* negligeable */
+}
+
+nav ul li{
+    list-style: none;
+    margin-left: 30px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: rgb(21, 21, 100);
+    font-size: 16px;
+    font-weight: 500;
+
+    /* Ensures ease of transition of the hover effect */
+    transition: 0.3s ease;
+}
+
+/* Add the style below not just when hovered but also when it is active */
+nav ul li a.active,
+nav ul li a:hover{
+    color: #FDC93B;
+}
+
+
+/* Home Section */
+
+#home{
+    /* This combines shadow like view, alongside the background image in the Home Page */
+    background-image: linear-gradient(rgba(9, 5, 54, 0.3),rgba(5, 4, 46, 0.7)),url("images/back.jpg");
+    width: 100%;
+    height: 100vh;
+
+    /* To centralize the background-image and make the Zoom a perfect fit */
+    background-size: cover;
+    background-position: center;
+
+    /* To centralize the content on the background-image */
+    display: flex;
+
+    flex-direction: column; /* The flex direction should follow the column */
+
+    justify-content: center;
+
+    /* For items within the targeted parent */
+    align-items: center;
+
+    /* For text contents only */
+    text-align: center;
+    padding-top: 40px;
+}
+
+#home h2{
+    color: #fff;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+#home .btn{
+    margin-top: 30px;
+}
+
+#home p{
+    color:#fff;
+    width: 50%;
+    font-size: 0.9rem;
+    line-height: 25px;
+}
+
+#home a{
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 13px 35px;
+    background-color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+#home .btn .blue-btn{
+    color: #fff;
+    background: rgb(21, 21, 100);
+
+    /* Ensures ease of transition of the hover effect */
+    transition: 0.3s ease;
+}
+
+#home .btn .blue-btn:hover{
+    color: rgb(21, 21, 100);
+    background-color: #fff;
+}
+
+#home .btn .yellow-btn{
+    color: #fff;
+    background-color: #FDC93B;
+
+    /* Ensures ease of transition of the hover effect */
+    transition: 0.3s ease;
+}
+
+#home .btn .yellow-btn:hover{
+    color: rgb(21, 21, 100);
+    background-color: #fff;
+}
+
+
+/* Features Section */
+
+#features{
+    padding: 5vw 8vw 0 8vw;
+    text-align: center;
+}
+
+#features .fea-contianer{
+    display: grid;
+    /* "repeat" means duplicate for all cards, "auto-fit" enhances responsiveness, "minmax" function specifies the size
+    of each card. 320px is for the width and it will be replicated on 1frame i.e 1fr */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+    margin-top: 50px;
+}
+
+#features .fea-box{
+    padding: 30px; /* My Addition */
+    background-color: #F9F9FF;
+    /* Aligns the text to the start of the targeted contianer */
+    text-align: start;
+}
+
+#features .fea-box i{
+    font-size: 2.3rem;
+    color: rgb(44, 44, 80)
+}
+
+#features .fea-box h3{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(46, 46, 59);
+    padding: 13px 0 7px 0;
+}
+
+#features .fea-box p{
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(70, 70, 87);
+}
+
+/* Course Section */
+
+#course{
+    padding: 8vw 8vw 8vw 8vw;
+    text-align: center;
+}
+
+#course .course-box{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap:1rem;
+    margin-top: 50px;
+}
+
+#course .courses{
+    text-align: start;
+    background: #F9F9FF;
+    height: 100%;
+    position: relative;
+}
+
+#course .courses img{
+    width: 100%;
+    height: 60%;
+    background-size: cover;
+    background-position: center ;
+}
+
+#course .courses .details{
+    padding: 15px 15px 0 15px;
+}
+
+#course .courses .details i{
+    color: #FDC93B;
+    font-size: .9rem;
+}
+
+#course .courses .cost{
+    background-color: rgb(74, 74, 136);
+    color: #fff;
+    line-height: 70px;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    right: 15px;
+    bottom: 100px;
+}
+
+/* Registration Section */
+#registration{
+    padding: 6vw 8vw 6vw 8vw;
+    background-image: linear-gradient(rgb(99,112,168,0.5),rgb(81,91,233,0.5)),url("images/signup.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    /* To give it a vertical alignment to the center */
+    align-items: center;
+}
+
+#registration .reminder{
+    color: #fff;
+}
+
+#registration .reminder h1{
+    color: #fff;
+}
+
+#registration .time{
+    display: flex;
+    margin-top: 40px;
+}
+
+#registration .reminder .time .date{
+    text-align: center;
+    padding: 13px 33px;
+    background: rgb(225,255,255,0.25);
+    /* to give it this glassy blur background look */
+    backdrop-filter: blur(4px); /* Acts like the CSS Position property */  
+    /* Box Shadow is 0 x-axis, 8px y-axis & 32px 0 radius. */
+    box-shadow: 0 8px 32px 0 rgb(33, 38, 135, 0.37);
+    border-radius: 10px;
+    /* This creates a space between successive boxes */
+    margin: 0 5px 10px 5px;
+    border: 1px solid rgb(225, 225, 225, 0.18);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+#registration .form{
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    /* Display flex by default aligns the item horizontally, but by changing the flex direction to column it aligns it to the horizontally */
+    flex-direction: column;
+    padding: 40px;
+    box-shadow: 0 8px 32px 0 rgb(33, 38, 135, 0.37);
+}
+
+#registration .form input{
+    margin: 15px 0;
+    padding: 15px 10px;
+    border: 1px solid rgb(84, 40, 241);
+    /* Removes the default style that appears once the input field is clicked on */
+    outline: none;
+}
+
+#registration .form input::placeholder{
+    color: #413c3c;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+#registration .form .btn{
+    margin-top: 20px;
+}
+
+#registration .form .yellow-btn{
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 13px 35px;
+    font-weight: 600;
+    border-radius: 5px;
+    color: #fff;
+    background: #FDC93B;
+    transition: 0.3s ease;
+}
+
+#registration .form .yellow-btn:hover{
+    color: rgb(21, 21, 100);
+    background: #fff;
+}
+
+/* Experts Section */
+#experts{
+    padding: 8vw 8vw 8vw 8vw;
+    text-align: center;
+}
+
+#experts .expert-box{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1rem;
+    margin-top: 50px;
+}
+
+#experts .expert-box .profile{
+    background: #fafaf1;
+    padding: 30px 10px;
+}
+
+.pro-links{
+    margin-top: 10px;
+}
+
+.pro-links i{
+    padding: 10px 13px;
+    border: 1px solid rgb(21, 21, 100);
+    cursor: pointer;
+    transition: 0.3s ease;
+    border-radius: 5px; /* My Addition */
+}
+
+.pro-links i:hover{
+    background: rgb(21, 21, 100);
+    color: #fff;
+    border: 1px solid rgb(21, 21, 100);
+    cursor: pointer;
+}
+
+/* Footer */
+footer{
+    padding: 8vw;
+    background-color: #101c32;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* This creates that responsive behaviour such that, once there is no space avialiable it takes the remaining contents
+    of the div to the next line. This is mostly as a result of screen widths */
+    flex-wrap: wrap;
+}
+
+footer .footer-col{
+    padding-bottom: 40px;
+}
+
+footer h3{
+    color: rgb(241, 240, 245);
+    font-weight: 600px;
+    padding-bottom: 20px;
+}
+
+footer .footer-col li{
+    list-style: none;
+    color: #7b838a;
+    padding: 10px 0;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+footer .footer-col li:hover{
+    color: rgb(241, 240, 245);
+}
+
+footer p{
+    color: #7b838a;
+}
+
+footer .subscribe{
+    margin-top: 20px;
+}
+
+footer input{
+    width: 220px;
+    padding: 13px 15px;
+    background: #334f6c;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+
+footer .subscribe .yellow-btn{
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 12px 15px;
+    font-weight: 600;
+    color: #2c2c2c;
+    background-color: #FDC93B;
+    /* Ensures ease of transition of the hover effect */
+    transition: 0.3s ease;
+}
+
+footer .yellow-btn:hover{
+    color: rgb(21, 21, 100);
+    background-color: #fff;
+}
+
+footer .copyright{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.copyright p{
+    color: #fff;
+}
+
+footer .pro-links i{
+    background-color: #5f7185;
+    color: #fff;
+}
+
+footer .pro-links i:hover{
+    background: #FDC93B;
+    color: #2c2c2c;
+}
+
+/* About Page */
+
+#about-home{
+    /* This combines shadow like view, alongside the background image in the Home Page */
+    background-image: linear-gradient(rgba(9, 5, 54, 0.3),rgba(5, 4, 46, 0.7)),url("images/back1.jpg");
+    width: 100%;
+    height: 60vh;
+
+    /* To centralize the background-image and make the Zoom a perfect fit */
+    background-size: cover;
+    background-position: center;
+
+    /* To centralize the content on the background-image */
+    display: flex;
+
+    flex-direction: column; /* The flex direction should follow the column */
+
+    justify-content: center;
+
+    /* For items within the targeted parent */
+    align-items: center;
+
+    /* For text contents only */
+    text-align: center;
+    padding-top: 40px;
+}
+
+#about-home h2{
+    color: #fff;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+#about-container{
+    display: flex;
+    /* Vertical Alignment to the center*/
+    align-items: center;
+    padding: 8vw 8vw 2vw 8vw;
+}
+
+#about-container .about-img{
+    width: 60%;
+    padding-right: 60px;
+}
+
+#about-container .about-img img{
+    width: 100%;
+}
+
+#about-container .about-text{
+    width: 40%;
+}
+
+#about-container .about-text h2{
+    color: #293038;
+    padding-bottom: 15px;
+}
+
+#about-container .about-text p{
+    color: #686f7a;
+    font-weight: 300;
+}
+
+#about-container .about-text .about-fe{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#about-container .about-text .about-fe img{
+    width: 50px;
+    background-size: cover;
+    background-position: center;
+    margin-right: 20px;
+}
+
+#about-container .about-text .about-fe .fe-text{
+    width: 90%;
+}
+
+#about-container .about-text .about-fe .fe-text h5{
+    font-size: 16px;
+    color: #293038;
+}
+
+/* Trust section */
+
+#trust{
+    text-align: center;
+    padding: 8vw;
+}
+
+#trust .trust-img{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#trust .trust-img img{
+    width: 90px;
+    height: auto;
+}
+
+/* Blog Page */
+
+#blog-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 8vw;
+}
+
+#blog-container .blog{
+    width: 60%;
+}
+
+#blog-container .blog img{
+    width: 100%;
+    border-radius: 19px;
+}
+
+#blog-container .blog .post{
+    padding-bottom: 60px;
+}
+
+#blog-container .blog .post h3 {
+    color: #293038;
+    padding: 15px 0 10px 0;
+}
+
+#blog-container .blog .post p {
+    color: #757373;
+    padding-bottom: 20px;
+}
+
+#blog-container .blog .post a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 13px 35px;
+    background-color: rgb(21, 21, 100);
+    color: #fff;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+#blog-container .cate{
+    width: 30%;
+}
+
+#blog-container .cate a {
+    padding-bottom: 7px;
+}
+
+#blog-container .cate a{
+    text-decoration: none;
+    color: #757373;
+    font-weight: 500;
+    line-height: 45px;
+}
+
+/* Extended Blog post section */
+#blog-container .blogpost{
+    width: 60%;
+    margin: 0 auto;
+}
+
+#blog-container .blogpost p{
+    text-align: justify; /* To trim the edge of the text to equality */
+    padding-bottom: 60px !important;
+}
+
+/* Course-inner Section */
+#course-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8vw;
+}
+
+#course-inner h3{
+    padding: 35px 0 25px 0;
+    color: #293038;
+}
+
+#course-inner p{
+    color: #64626e;
+    text-align: justify; /* My Addition */
+}
+
+#course-inner hr{
+    height: 1px;
+    background: rgb(226,256,229,0.5);
+    margin-top: 40px;
+}
+
+#course-inner .overview{
+    width: 70%;
+}
+
+#course-inner .overview .course-img{
+    width: 100%;
+    height: 60vh;
+    object-fit: cover; /* Makes the object fits properly within its container */
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+#course-inner .overview .course-head{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#course-inner .overview .course-head .c-name{
+    width: 70%;
+}
+
+#course-inner .overview .course-head .c-name h2{
+    color: #293038;
+}
+
+#course-inner .overview .course-head .c-name .star{
+    margin: 6px 0;
+}
+
+#course-inner .overview .course-head .c-name .star i{
+    color: #FDC93B;
+    font-size: 0.9rem;
+}
+
+#course-inner .overview .course-head .c-name p{
+    font-size: 15px;
+}
+
+#course-inner .overview .course-head span{
+    padding: 16px 22px;
+    border-radius: 5px;
+    color: #5838fc;
+    font-size: 24px;
+    font-weight: 700;
+    background-color: rgb(88, 56, 252, 0.1);
+}
+
+#course-inner .learn p{
+    font-size: 15px;
+    padding-bottom: 15px;
+}
+
+#course-inner .learn p i{
+    color: #654ce4;
+    font-weight: 700;
+    margin-right: 20px;
+}
+
+#course-inner .tutor{
+    display: flex; /* Flex all the children within the parent element with the class name "tutor" */
+}
+
+#course-inner .tutor img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+#course-inner .tutor h5{
+    font-size: 15px;
+}
+
+#course-inner .enroll{
+    width: 300px;
+    padding: 0 30px 30px 30px;
+    border-radius: 11px;
+    box-shadow: 0px 20px 40px 0 rgb(11, 2, 55 / 8%);
+}
+
+#course-inner .enroll h3{
+    padding-bottom: 10px;
+}
+
+#course-inner .enroll p{
+    font-size: 15px;
+    color: #64626e;
+    margin: 15px 0;
+}
+
+#course-inner .enroll p i{
+    color: #654ce4;
+    font-weight: 500px;
+    margin-right: 18px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+}
+
+#course-inner .enroll .enroll-btn{
+    padding: 25px 0 20px 0;
+    margin: auto;
+    text-align: center;
+}
+
+#course-inner .enroll .enroll-btn a{
+    text-decoration: none;
+    color: #fff;
+    background: rgb(50, 50, 136);
+    font-size: .8rem;
+    padding: 13px 45px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+
+/* I-Pad/Tablet size media query */
+@media (max-width: 769px) {
+
+    /* Nav Section */
+
+    nav{
+        padding: 15px 20px;
+    }
+    
+    nav img {
+        width: 130px;
+    }
+
+    nav #menu-btn{
+        display: initial; /*To display what was set at "none" in the media query */
+    }
+
+    nav #menu-close{
+        display: initial;
+        font-size: 1.6rem;
+        color: #fff;
+        padding: 30px 0 20px 20px;
+    }
+
+    nav .navigation ul {
+        position: absolute;
+        top: 0;
+        right: -220px; /* That is, canceling out the width of 220px below*/
+        width: 220px;
+        background-color: rgb(17, 20, 104, 0.45);
+        /* To give it that glassy blur in the background */
+        backdrop-filter: blur(4.5px);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        transition: 0.3s ease;
+    }
+
+    /* for javaScript */
+    nav .navigation ul.active{
+        right: 0;
+    }
+
+    nav .navigation ul li{
+        padding: 20px 0 20px 40px;
+        margin-left: 0;
+    }
+
+    nav .navigation ul li a{
+        color: #fff;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover{
+    color: #FDC93B;
+}
+
+    /* Home Section */
+
+    #home {
+        padding-top: 0px;
+    }
+
+    #home p {
+        width: 90%;
+    }
+
+    /* Feature section */
+
+    #features {
+        padding: 8vw 4vw 0 4vw;
+    }
+
+    /* Course section */
+
+    #course {
+        padding: 8vw 4vw 0vw 4vw;
+    }
+
+    /* Registration */
+
+    #registration {
+        margin-top: 8vw;
+        padding: 6vw 4vw 6vw 4vw;
+    }
+
+    #registration .reminder .time {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+
+    /* Experts section */
+    
+    #experts {
+        padding: 8vw 8vw 4vw 8vw;
+        text-align: center;
+    }
+
+    /* Footer section */
+
+    footer .pro-links i {
+        margin-top: 15px;
+    }
+
+    /* About Page Media Query for Ipad Size Screen */
+
+    #about-container {
+        display: flex;
+        align-items: center;
+        padding: 8vw 4vw 2vw 4vw;
+    }
+
+    #about-container .about-img {
+        padding-right: 30px;
+    }
+
+    #trust .trust-img img{
+        margin-top: 50px;
+        height: auto;
+    }
+
+    /* Blog Page Media Query for Ipad Size Screen */
+
+    #blog-container {
+        padding: 8vw 4vw;
+    }
+
+    /* Extended blog post section */
+    #blog-container .blogpost{
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    #blog-container .blog img {
+        width: 100%;
+        height: 50vh;
+        object-fit: cover; /* Ensures the Targeted item flows in with the rest of the text */
+    }
+
+    /* Course-inner Media Query for Ipad Size Screen */
+    #course-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 8vw 4vw;
+    }
+
+    #course-inner .overview {
+        width: 100%;
+    }
+
+    #course-inner .overview .course-img{
+        width: 100%;
+        height: 100%;
+    }
+
+    #course-inner .enroll {
+        margin-top: 25px;
+    }
+}
+
+
+
+/* Mobile size media query */
+@media (max-width: 475px){
+    #registration{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center ;
+    }
+
+    #registration .reminder .time {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0 20px 0;
+    }
+
+    /* About Page Media Query for Mobile Sized Screen */
+
+    /* Re-order the direction/position of the items in the flexed column container */
+    #about-container {
+        flex-direction: column-reverse;
+    }
+
+    #about-container .about-img {
+        width: 100%;
+        padding-right: 0px;
+    }
+
+    #about-container .about-text{
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    #about-container .about-text .about-fe{
+        padding-top: 30px; /* My Addition */
+    }
+
+    #trust .trust-img {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    #trust .trust-img img {
+        width: 60px;
+        margin: 10px 15px;
+        height: auto;
+    }
+
+    /* Blog Page Media Query for Mobile sized screen */
+    #blog-container{
+        flex-direction: column;
+    }
+
+    #blog-container .blog{
+        width: 100%;
+    }
+
+    #blog-container .cate{
+        width: 100%;
+    }
+
+    /* For Extended blog post */
+
+    #blog-container .blogpost{
+        width: 100%;
+        margin-top: 70px;
+    }
+
+    #blog-container .blogpost img{
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+    }
+
+    /* course-inner Media Query for Mobile sized screen */
+    #course-inner .overview .course-head .c-name{
+        width: 50%;
+    }
+
+    #course-inner .overview .course-head .c-name h2{
+        font-size: 22px;
+    }
+
+    #course-inner .overview .course-head span{
+        font-size: 22px;
+    }
+
+    #course-inner .enroll{
+        width: 100%;
+    }
+}
