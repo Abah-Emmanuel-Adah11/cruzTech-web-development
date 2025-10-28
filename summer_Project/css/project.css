@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #333;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+nav{
+  position: fixed;
+  top:0;
+  left:0;
+  background-color: #4a90e2;
+  width: 100%;
+  padding: 15px 50px;
+  display: flex;
+  justify-content:space-between;
+  text-align: center;
+  color: #fff;
+}
+
+nav h1{
+   /* It creates line between each alphabet*/ 
+   letter-spacing: 1px;
+}
+
+nav ul{
+  /* It removes the bullet sign at the beginning of the list */
+  list-style: none;
+  display: flex;
+}
+
+nav ul li{
+  /* It will add a 25px unit space to the left of the li */
+  margin-left: 25px;
+}
+
+nav ul li a{
+  /* It remove the default appearance of anchor tag */
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+nav ul li a:hover{
+  color: #ffd700;
+}
+
+/* Hero section */
+header{
+  height: 100vh;
+  background: linear-gradient(to right, #4a90e2, #50c9c3);
+  /* centralize the targeted content */
+  justify-content: center;
+  align-items: center;
+  /* Centralizes text, word or sentence */
+  text-align: center;
+  color: #fff;
+  padding-top: 13rem;
+}
+
+header h2{
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+header p{
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+header a{
+  text-decoration: none;
+  padding: 12px 25px;
+  background-color: #ffd700;
+  border-radius: 30px;
+  font-weight: bold;
+  color: #333;
+}
+
+header a:hover{
+  background: #fff;
+  color: #4a90e2;
+}
+
+/* About Section */
+#about{
+  height: 120vh;
+  background:  linear-gradient(to right, #4a90e2, #50c9c3);
+  color: #fff;
+  padding: 80px 10%;
+}
+
+#about h2{
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #ffd700;
+}
+
+#about p{
+  max-width: 900px;
+  margin: auto;
+  font-size: 18px;
+  text-align: center;
+  line-height: 2;
+}
+
+#about a{
+  display: block;
+  text-align: center;
+  padding: 15px 15px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #ffd700;
+}
+
+#about img{
+  display: block;
+  text-align: center;
+  margin-left: 29rem;
+  margin: 50px auto;
+  border-radius: 50px;
+}
+
+/* Project section */
+#project-body{
+  background: linear-gradient(to right, #4a90e2 , #50c9c3);
+  height: 100vh;
+}
+
+#my-project{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+#project-body h2{
+  padding: 50px;
+  text-align: center;
+  color: #ffd700;
+  font-size: 40px;
+}
+
+#project-body .sub-project{
+  text-align: center;
+  color: #fff;
+  width: 400px;
+  padding-bottom: 50px;
+}
+
+#project-body button{
+  padding: 20px;
+  background-color: #ffd700;
+  border-radius: 30px;
+  margin-left: 20px;
+}
+
+#project-body button a{
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
